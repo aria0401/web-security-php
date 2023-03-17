@@ -6,7 +6,7 @@ $user = new User();
 if (isMethod('post')) {
 
     $conn = require_once(__DIR__ . '/../includes/db.php');
-    $user->email = $_POST['email'];
+    $user->username = $_POST['username'];
     $user->password = $_POST['password'];
 
     if ($user->validate()) {
@@ -15,7 +15,7 @@ if (isMethod('post')) {
 
             if ($user->checkVerified($conn)) {
 
-                $userObj = User::getByEmail($conn, $user->email);
+                $userObj = User::getByUsername($conn, $user->username);
 
                 if ($userObj->is_admin) {
 
@@ -53,8 +53,8 @@ if (isMethod('post')) {
                 </ul>
             <?php endif; ?>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" type="email" name="email" id="email" value="<?= htmlspecialchars($user->email); ?>" required>
+                <label for="username">Username</label>
+                <input class="form-control" type="text" name="username" id="username" value="<?= htmlspecialchars($user->username); ?>" required>
             </div>
             <div class="form-group mt-2">
                 <label for="password">password</label>

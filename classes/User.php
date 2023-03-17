@@ -173,10 +173,10 @@ class User {
     public function checkVerified($conn) {
         // in login.php
 
-        $sql = "SELECT * FROM users WHERE email = :email AND verified = 1";
+        $sql = "SELECT * FROM users WHERE username = :username AND verified = 1";
 
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $stmt->bindValue(':username', $this->username, PDO::PARAM_STR);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         $stmt->execute();
 
