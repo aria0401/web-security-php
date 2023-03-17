@@ -103,24 +103,6 @@ class User {
         }
     }
 
-    // /** Select user where email matches and return true is succesfull */
-    // public function authenticateEmail($conn) {
-    //     // in sign-up, forgot-password
-
-    //     $sql = "SELECT * FROM users WHERE email = :email";
-
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
-    //     $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
-    //     $stmt->execute();
-
-    //     if ($stmt->fetch()) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
     /** Insert new user in db with a hashed password and a verification key */
     public function create($conn) {
         // in sign-up.php
@@ -141,7 +123,6 @@ class User {
             return false;
         }
     }
-
 
     /** Select user in daba where verification_key matches and return user as assoc array */
     public function verifyKey($conn, $verification_key) {
@@ -258,7 +239,6 @@ class User {
         }
     }
 
-
     /** Update users, set new email and password where id matches */
     public function updateLogin($conn) {
         // in edit-profile.php
@@ -277,7 +257,6 @@ class User {
             return true;
         }
     }
-
 
     /** Create user profile, set ocupation and description where id matches */
     public function createProfile($conn) {
@@ -327,23 +306,6 @@ class User {
             return $stmt->fetch();
         }
     }
-
-    // /** * Select user where email matches and return an user object */
-    // public static function getByEmail($conn, $email, $columns = '*') {
-    //     // in: forgot-password, login
-
-    //     $sql = "SELECT $columns
-    //             FROM users
-    //             WHERE email = :email";
-
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-    //     $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
-    //     if ($stmt->execute()) {
-
-    //         return $stmt->fetch();
-    //     }
-    // }
 
     /** * Select user where id matches and return an user object */
     public static function getById($conn, $id, $columns = '*') {
