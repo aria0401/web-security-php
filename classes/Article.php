@@ -286,7 +286,7 @@ class Article {
     public static function getComments($conn, $article_id) {
         // on article.php
 
-        $sql = "SELECT co.comment, users.username, users.first_name FROM comments co 
+        $sql = "SELECT co.comment, users.username FROM comments co 
         JOIN users ON co.user_id = users.id
         WHERE article_id=:article_id";
 

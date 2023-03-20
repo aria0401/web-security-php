@@ -71,7 +71,7 @@ $_nav = true;
                             <?php foreach ($comments as $comment) : ?>
                                 <div class="comment mb-3">
                                     <p class="mt-2 mb-0"><?= htmlspecialchars($comment['comment']); ?></p>
-                                    <span class="small"><?= $comment['username'] ? htmlspecialchars($comment['username']) : htmlspecialchars($comment['first_name']); ?></span>
+                                    <span class="small"><?= htmlspecialchars($comment['username']) ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </div>
