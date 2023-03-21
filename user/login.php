@@ -15,7 +15,7 @@ if (isMethod('post')) {
 
             $userObj = User::getByUsername($conn, $user->username);
             Auth::login($userObj);
-            Url::redirect('/');
+            Url::redirect('/blog.php');
         } else {
             $error = 'Login incorrect. Make sure you have the right credentials.';
         }
@@ -23,12 +23,11 @@ if (isMethod('post')) {
 }
 ?>
 <?php $_title = 'User - Log in';
-$_nav = true;
 $_headerClass = 'light';
 ?>
 <?php require_once(__DIR__ . '/../includes/header.php');  ?>
 
-<div class="container-form-page mt-4 py-5">
+<div class="container-form-page mt-4 py-5 main-content">
     <div class="form p-4">
         <h1>Log in</h1>
         <form method="post" id="formUserValidate">
@@ -44,7 +43,7 @@ $_headerClass = 'light';
             <?php endif; ?>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input class="form-control" type="text" name="username" id="username" value="<?= htmlspecialchars($user->username); ?>" required>
+                <input class="form-control" type="text" name="username" id="username" value="<?= htmlspecialchars($user->username); ?>" required autofocus>
             </div>
             <div class="form-group mt-2">
                 <label for="password">password</label>

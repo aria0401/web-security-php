@@ -15,7 +15,6 @@ if (isset($_GET['id'])) {
 
 <?php
 $_title = 'User - Article';
-$_nav = true;
 $_headerClass = 'dark';
 ?>
 

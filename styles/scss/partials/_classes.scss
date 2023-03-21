@@ -1,0 +1,11 @@
+.primary-btn{
+    background-color: $secondary-color;
+    padding: 0.4rem 3rem;
+    border-radius: 0.4rem;
+    color: $black;
+    text-decoration: none;
+
+    &:hover{
+        color: $white;
+    }
+}

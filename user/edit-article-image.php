@@ -55,7 +55,6 @@ if (isMethod('post')) {
 
 <?php
 $_title = 'User - Edit Article Image';
-$_nav = true;
 $_headerClass = 'dark';
 ?>
 <?php require_once(__DIR__ . '/../includes/header.php'); ?>

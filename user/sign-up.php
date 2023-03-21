@@ -30,17 +30,16 @@ if (isMethod('post')) {
 
 ?>
 <?php $_title = 'User - Sign up';
-$_nav = true;
 $_headerClass = 'light';
 ?>
 <?php require_once(__DIR__ . '/../includes/header.php');  ?>
 
 <?php if ($message) : ?>
-    <div class="container send-message mt-5 py-5">
+    <div class="container send-message mt-5 py-5 main-content">
         <p class=""><?= $message; ?></p>
     </div>
 <?php else : ?>
-    <div class="container-form-page mt-4 py-5">
+    <div class="container-form-page mt-4 py-5 main-content">
         <div class=" form p-4 py-5">
             <h1 class="">Sign up</h1>
             <form method="post" id="formUserValidate">
@@ -56,7 +55,7 @@ $_headerClass = 'light';
                 <?php endif; ?>
                 <div class="form-group">
                     <label for="username">username</label>
-                    <input class="form-control" type="text" name="username" id="username" value="<?= htmlspecialchars($user->username); ?>" required>
+                    <input class="form-control" type="text" name="username" id="username" value="<?= htmlspecialchars($user->username); ?>" required autofocus>
                 </div>
                 <div class="form-group mt-2">
                     <label for="password">Password</label>

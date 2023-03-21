@@ -2,44 +2,42 @@ header {
   display: flex;
   justify-content: center;
   height: $header-height;
+  width: 100%;
 
-    nav.navbar {
+    &.dark-header{
+      background-color: $primary-color;
+    }
+
+    .navbar{
       width: 100%;
-      padding-inline: 4rem;
+
+      a{
+        text-decoration: none;
+        color: $white;
+      }
+
+      .logo-tx{
+        font-size: 26px;
+      }
+
+      .logo{
+        width: 6%;
+        margin-right: .5rem;
+      }
+
+      .nav-labels{
+        a{
+          margin-left: 3rem;
+          font-size: 1.3rem;
+          &:hover{
+            color: $secondary-color;
+          }
+        }
+      }
     }
-
-    a{
-      text-decoration: none;
-      text-transform: uppercase;
-      margin-right: 4rem;
-      color: $secondary-color-dark;
-    }
-
-
-    div.nav-labels{
-      width: 80%;
-    }
-
-
-
 }
 
-header.dark{
-  height: 6rem;
-  background-color: $secondary-color-dark;
-  a{
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 4rem;
-    color: white
-  }
-}
 
-header.light{
-  height: 6rem;
-  background-color: $secondary-color;
-
-}
 
 
 header.admin{
@@ -69,18 +67,3 @@ nav.admin{
   }
 }
 
-
-div.user-nav{
-  background-color: $secondary-color;
-  height: 4rem;
-  align-items: center;
-  padding-left: 4rem;
-
-  a{
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 4rem;
-    color: #3A698B;
-    margin-right: 20px;
-  }
-}

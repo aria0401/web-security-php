@@ -33,7 +33,6 @@ if (isMethod('post')) {
 
 
 <?php $_title = 'User - Delete Article';
-$_nav = true;
 $_headerClass = 'dark';
 ?>
 <?php require_once(__DIR__ . '/../includes/header.php'); ?>

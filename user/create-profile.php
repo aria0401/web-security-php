@@ -23,7 +23,6 @@ if (isMethod('post')) {
 
 ?>
 <?php $_title = 'User - Create Profile';
-$_nav = true;
 ?>
 <?php require_once(__DIR__ . '/../includes/header.php');  ?>
 <?php if (Auth::isLoggedIn()) : ?>

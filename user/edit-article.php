@@ -48,7 +48,6 @@ if (isMethod('post')) {
 
 
 <?php $_title = 'User - Edit Article';
-$_nav = true;
 $_headerClass = 'dark';
 ?>
 

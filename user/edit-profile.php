@@ -45,7 +45,6 @@ if (isMethod('post')) {
 }
 
 $_title = 'User - Edit Profile';
-$_nav = true;
 $_headerClass = 'dark';
 ?>
 
@@ -59,7 +58,7 @@ $_headerClass = 'dark';
             </div>
         </div>
     <?php else : ?>
-        <div class="container-form-page mt-4 py-5">
+        <div class="container-form-page mt-4 py-5 main-content">
             <?php if ($authenticated) : ?>
                 <div class=" form p-4 py-5">
                     <h1 class="">Edit profile when you have one.</h1>

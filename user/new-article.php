@@ -34,14 +34,13 @@ if (isMethod('post')) {
 
 
 <?php $_title = 'User - New Article';
-$_nav = true;
 $_headerClass = 'dark';
 ?>
 
 <?php require_once(__DIR__ . '/../includes/header.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
     <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
-    <div class="container mb-5 mt-5">
+    <div class="container mb-5 mt-5 main-content">
         <?php if ($has_profile) : ?>
             <h2 class="my-3">New Article</h2>
             <?php require_once(__DIR__ . '/../includes/article-form.php'); ?>

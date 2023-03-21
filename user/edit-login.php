@@ -43,7 +43,6 @@ if (isMethod('post')) {
 }
 
 $_title = 'User - Edit login';
-$_nav = true;
 $_headerClass = 'dark';
 ?>
 
