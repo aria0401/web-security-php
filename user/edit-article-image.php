@@ -50,35 +50,26 @@ if (isMethod('post')) {
     }
 }
 
-?>
 
-
-<?php
 $_title = 'User - Edit Article Image';
-$_headerClass = 'dark';
+require_once(__DIR__ . '/../includes/header.php');
+require_once(__DIR__ . '/../includes/modal.php');
 ?>
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
-<?php require_once(__DIR__ . '/../includes/modal.php'); ?>
+
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <div class="container py-5 main-content">
         <?php if ($article) : ?>
-
             <article class="row py-5">
                 <h2 class="col-12"><?= htmlspecialchars($article->title); ?></h2>
                 <p class="col-12"><?= htmlspecialchars($article->description); ?></p>
                 <?php if ($article->image_file) : ?>
                     <img class="col-3" src="../uploads/articles/<?= $article->image_file; ?>" alt="article image">
                     <a id="deleteBtn" class="col-12" href="delete-article-image.php?id=<?= $article->id; ?>">Delete Image</a>
-
                 <?php endif; ?>
             </article>
-
         <?php else : ?>
             <p>We could not find this article.</p>
         <?php endif; ?>
-
-
 
         <?php if (!empty($image->errors)) : ?>
             <ul>

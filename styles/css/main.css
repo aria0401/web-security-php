@@ -78,37 +78,39 @@ img {
 }
 
 header {
-  display: flex;
-  justify-content: center;
   height: 6rem;
   width: 100%;
-}
-header.dark-header {
   background-color: #63987C;
 }
-header .navbar {
-  width: 100%;
-}
-header .navbar a {
+header a {
   text-decoration: none;
   color: #fff;
 }
-header .navbar .logo-tx {
-  font-size: 26px;
-}
-header .navbar .logo {
+header .logo {
   width: 6%;
   margin-right: 0.5rem;
 }
-header .navbar .nav-labels a {
+header .logo-tx {
+  font-size: 26px;
+}
+header .nav-labels {
+  list-style: none;
+}
+header .nav-labels a {
   margin-left: 3rem;
   font-size: 1.3rem;
 }
-header .navbar .nav-labels a:hover {
+header .nav-labels a:hover {
   color: #EBCC5E;
 }
-header .navbar .nav-labels a.active {
+header .nav-labels a.active {
   color: #EBCC5E;
+}
+header .burger-menu-labels {
+  list-style: none;
+}
+header .burger-menu-labels a {
+  font-size: 2.3rem;
 }
 
 header.admin {

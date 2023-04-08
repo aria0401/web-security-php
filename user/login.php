@@ -21,12 +21,12 @@ if (isMethod('post')) {
         }
     }
 }
-?>
-<?php $_title = 'User - Log in';
+$_title = 'User - Log in';
 $_bodyClass = 'login-page';
 $_login = 'active';
+require_once(__DIR__ . '/../includes/header.php');
 ?>
-<?php require_once(__DIR__ . '/../includes/header.php');  ?>
+
 <div class="container">
     <div class="container-form-page mt-4 py-5 main-content">
         <h1 class="form-heading mb-4">Log In</h1>

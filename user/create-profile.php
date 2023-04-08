@@ -21,12 +21,12 @@ if (isMethod('post')) {
     }
 }
 
+$_title = 'User - Create Profile';
+
+require_once(__DIR__ . '/../includes/header.php');
 ?>
-<?php $_title = 'User - Create Profile';
-?>
-<?php require_once(__DIR__ . '/../includes/header.php');  ?>
+
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <div class="container">
         <div class="container-form-page mt-4">
             <div class=" form p-4">
@@ -51,7 +51,6 @@ if (isMethod('post')) {
                 </form>
                 <div class="mt-3">
                     <p>Already have a profile? <a href="">Edit Profile</a></p>
-
                 </div>
             </div>
         </div>

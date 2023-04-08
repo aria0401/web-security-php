@@ -9,14 +9,12 @@ if (isset($_GET['id'])) {
     $title = $article->title;
     $description = $article->description;
 
-
     if (!$article) {
         die("article not found");
     }
 } else {
     die("id not supplied, article not found");
 }
-
 
 $image = new Image();
 
@@ -32,12 +30,10 @@ if (isMethod('post')) {
     }
 }
 
+$_title = 'User - Delete Article Image';
+require_once(__DIR__ . '/../includes/header.php');
 ?>
 
-
-<?php $_title = 'User - Delete Article Image';
-?>
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
     <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <div class="container">

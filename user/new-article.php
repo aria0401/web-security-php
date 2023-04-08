@@ -28,17 +28,13 @@ if (isMethod('post')) {
         }
     }
 }
-?>
 
-
-<?php $_title = 'User - New Article';
-$_headerClass = 'dark';
+$_title = 'User - New Article';
 $_newArticle = 'active';
+require_once(__DIR__ . '/../includes/header.php');
 ?>
 
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <div class="container mb-5 mt-5 main-content">
         <?php if ($has_profile) : ?>
             <h2 class="my-3">New Article</h2>
@@ -46,7 +42,6 @@ $_newArticle = 'active';
         <?php else : ?>
             <h2>You need to have a profile to create an article</h2>
             <button class="btn primary_button w-10rem"><a class="btn" href="create-profile.php?id=<?= $_SESSION['user_id']; ?>">Create Profile</a></button>
-
         <?php endif; ?>
     </div>
 <?php else :

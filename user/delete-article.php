@@ -5,7 +5,6 @@ $conn = require_once(__DIR__ . '/../includes/db.php');
 
 $authenticated = true;
 
-
 if (isset($_GET['id'])) {
 
     $article = Article::getById($conn, $_GET['id']);
@@ -29,16 +28,12 @@ if (isMethod('post')) {
     }
 }
 
+$_title = 'User - Delete Article';
+require_once(__DIR__ . '/../includes/header.php');
+require_once(__DIR__ . '/../includes/modal.php');
 ?>
 
-
-<?php $_title = 'User - Delete Article';
-$_headerClass = 'dark';
-?>
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
-<?php require_once(__DIR__ . '/../includes/modal.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <div class="container main-content">
         <?php if ($authenticated) : ?>
             <h2>Delete Article</h2>
@@ -55,6 +50,5 @@ $_headerClass = 'dark';
 <?php else :
     Url::redirect('/user/login.php');
 endif; ?>
-
 
 <?php require_once(__DIR__ . '/../includes/footer.php'); ?>

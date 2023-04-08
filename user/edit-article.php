@@ -44,17 +44,11 @@ if (isMethod('post')) {
     }
 }
 
+$_title = 'User - Edit Article';
+require_once(__DIR__ . '/../includes/header.php');
 ?>
-
-
-<?php $_title = 'User - Edit Article';
-$_headerClass = 'dark';
-?>
-
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
 
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <?php if ($authenticated) : ?>
         <div class="container mb-5">
             <h2 class="my-3">Edit Article</h2>

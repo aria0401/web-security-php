@@ -6,14 +6,12 @@ $conn = require_once(__DIR__ . '/includes/db.php');
 
 $categories = Category::getAll($conn);
 
-?>
-<?php
+
 $_title = 'Web Security | Home';
 $_bodyClass = 'index-page';
-$_headerClass = 'dark-header';
 $_homePage = 'active';
+require_once(__DIR__ . '/includes/header.php');
 ?>
-<?php require_once(__DIR__ . '/includes/header.php');  ?>
 
 <div class="container p-0 main-content mt-5 pt-5">
     <div class="hero-banner mt-4">

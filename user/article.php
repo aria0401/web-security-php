@@ -10,20 +10,14 @@ if (isset($_GET['id'])) {
     $article = null;
 }
 
-?>
-
-
-<?php
 $_title = 'User - Article';
-$_headerClass = 'dark';
+
+require_once(__DIR__ . '/../includes/header.php');
+require_once(__DIR__ . '/../includes/modal.php');
 ?>
 
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
-<?php require_once(__DIR__ . '/../includes/modal.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <div class="container py-5 main-content">
-
         <?php if ($article) : ?>
             <article class="row py-5">
                 <?php if ($article[0]['image_file']) : ?>
@@ -51,7 +45,6 @@ $_headerClass = 'dark';
             <a id="" class="btn primary_button w-10rem" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete</a>
             <!-- <a id="deleteBtn" class="btn" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete</a> -->
             <a class="btn primary_button w-10rem" href="edit-article-image.php?id=<?= $article[0]['id']; ?>"><?= $article[0]['image_file'] ? 'Edit Image' : 'Add Image'; ?></a>
-
         </div>
     </div>
 <?php else :

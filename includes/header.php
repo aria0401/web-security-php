@@ -16,38 +16,12 @@
 
 <body class="<?= $_bodyClass ?? null ?>">
     <div class="site-content">
-        <header class="dark-header">
-            <div class="container p-0 d-flex">
-                <nav class="navbar mt-4">
-                    <div class="nav-logo">
-                        <a class="logo-tx d-flex" href="/"> <img class="logo" src="/media/site-images/logo.svg" alt="">Web Security</a>
-                    </div>
-                    <div class="nav-labels d-flex justify-content-end">
-                        <a class="d-none d-lg-block <?= $_owasp ?? ' ' ?>" href="/owasp-top-10.php">OWASP Top 10</a>
-                        <a class="d-none d-lg-block <?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a>
-                        <?php if (Auth::isLoggedIn()) : ?>
-                            <div class="container">
-                                <div class="menu-icon d-flex justify-content-end">
-                                    <svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="36" height="4" rx="2" fill="#FEFFFB" />
-                                        <rect y="11" width="36" height="4" rx="2" fill="#FEFFFB" />
-                                        <rect y="22" width="36" height="4" rx="2" fill="#FEFFFB" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="burger-menu-overlay">
-                                <div class="container d-flex flex-column align-items-end mt-5">
-                                    <div class="menu-icon burger-menu-close">
-                                        <img src="media/icons/burger-menu-close.svg" alt="">
-                                    </div>
-                                    <?php require_once(__DIR__ . '/user_nav.php'); ?>
-                                </div>
-                            </div>
-                        <?php else : ?>
-                            <a class="<?= $_login ?? ' ' ?>" href="/user/login.php">Log in</a>
-                            <a class="<?= $_sign_up ?? ' ' ?>" href="/user/sign-up.php">Sign Up</a>
-                        <?php endif; ?>
-                    </div>
-                </nav>
+        <header>
+            <div class="container p-0">
+                <?php if (Auth::isLoggedIn()) : ?>
+                    <?php require_once(__DIR__ . '/user_nav_logged_in.php'); ?>
+                <?php else : ?>
+                    <?php require_once(__DIR__ . '/user_nav_logged_out.php'); ?>
+                <?php endif; ?>
             </div>
         </header>

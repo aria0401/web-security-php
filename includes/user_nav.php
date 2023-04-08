@@ -1,6 +1,6 @@
 <div class="mt-5">
-    <div><?= $_SESSION['username'] ?></div>
-    <ul class="d-flex flex-column align-items-end">
+    <!-- <div><?= $_SESSION['username'] ?></div> -->
+    <ul class="d-flex flex-column align-items-end nav-labels burger-menu-labels">
         <li><a class="<?= $_homePage ?? ' ' ?>" href="/">Home</a></li>
         <li class="d-lg-none"><a class="<?= $_owasp ?? ' ' ?>" href="/owasp-top-10.php">OWASP Top 10</a></li>
         <li class="d-lg-none"><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
@@ -11,6 +11,6 @@
         <?php else : ?>
             <li><a href="/user/create-profile.php?id=<?= $_SESSION['user_id']; ?>">Create Profile</a></li>
         <?php endif; ?>
-        <li><a class="" href="/user/logout.php">Log out</a></li>
+        <li class="mt-5"><a class="" href="/user/logout.php">Log out</a></li>
     </ul>
 </div>

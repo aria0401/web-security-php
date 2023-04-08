@@ -17,15 +17,12 @@ if (isMethod('get')) {
 }
 
 
-
-?>
-<?php
 $_title = 'Articles Overview';
 $_nav = true;
 $_overview = 'filter-overview';
 $_bodyClass = 'overview-page';
+require_once(__DIR__ . '/includes/header.php');
 ?>
-<?php require_once(__DIR__ . '/includes/header.php');  ?>
 
 <div class="container-fluid overview-container" id="main-sidebar">
     <button class="openbtn d-none-desktop" id="openNav">☰ See more categories</button>
@@ -62,7 +59,6 @@ $_bodyClass = 'overview-page';
                 <?php endif;
                 endforeach; ?>
             </div>
-
             <template class="article-template">
                 <div class="item p-lg-2 mb-4">
                     <a class="article_a" href="">
@@ -81,7 +77,6 @@ $_bodyClass = 'overview-page';
             </template>
         </div>
     </div>
-
 </div>
 
 <?php require_once(__DIR__ . '/includes/footer.php'); ?>

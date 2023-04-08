@@ -5,19 +5,16 @@ require_once(__DIR__ . '/../includes/init.php');
 $conn = require_once(__DIR__ . '/../includes/db.php');
 $categories = Category::getAll($conn);
 $articles = Article::getByUserID($conn, $_SESSION['user_id']);
-?>
 
-<?php
 $_title = 'User - Articles Overview';
 $_overview = 'filter-overview';
 $_bodyClass = 'overview-page';
-$_headerClass = 'dark';
 $_yourArticles = 'active';
+
+require_once(__DIR__ . '/../includes/header.php');
 ?>
-<?php require_once(__DIR__ . '/../includes/header.php');  ?>
 
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <div class="container-fluid overview-container main-content" id="main-sidebar">
         <div class="row">
             <div class="col-11 col-sm-9 mx-auto main-content">
@@ -39,9 +36,9 @@ $_yourArticles = 'active';
                 </div>
             </div>
         </div>
-
     </div>
 <?php else :
     Url::redirect('/user/login.php');
 endif; ?>
+
 <?php require_once(__DIR__ . '/../includes/footer.php'); ?>

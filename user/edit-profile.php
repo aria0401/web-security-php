@@ -20,12 +20,10 @@ if (isMethod('get')) {
     }
 }
 
-
 if (isMethod('post')) {
 
     $newUser->ocupation = $_POST['ocupation'];
     $newUser->description = $_POST['description'];
-    // $newUser->password = $_POST['password'];
     $newUser->id = $_SESSION['user_id'];
 
     //display new values in the form
@@ -47,11 +45,10 @@ if (isMethod('post')) {
 $_title = 'User - Edit Profile';
 $_headerClass = 'dark';
 $_yourProfile = 'active';
+require_once(__DIR__ . '/../includes/header.php');
 ?>
 
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
-    <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <?php if ($message) : ?>
         <div class="container-form-page send-message mt-4">
             <div class="form p-4">
@@ -67,7 +64,6 @@ $_yourProfile = 'active';
                         <p class="mt-3" class="error"><?= $user_not_found; ?></p>
                     <?php endif; ?>
                     <form method="post">
-
                         <?php if (!empty($newUser->errors)) : ?>
                             <ul>
                                 <?php foreach ($newUser->errors as $error) : ?>
@@ -83,10 +79,6 @@ $_yourProfile = 'active';
                             <label for="description">Description</label>
                             <textarea class="form-control" name="description" id="" cols="30" rows="10" placeholder="Tell us about you"><?= htmlspecialchars($description); ?></textarea>
                         </div>
-                        <!-- <div class="form-group mt-2">
-                            <label for="password">Password</label>
-                            <input class="form-control" type="password" name="password" id="password" value="<?= htmlspecialchars($newUser->password); ?>" placeholder="New password">
-                        </div> -->
                         <button class="btn primary_button w-100 mt-3">Edit Profile</button>
                     </form>
                 </div>

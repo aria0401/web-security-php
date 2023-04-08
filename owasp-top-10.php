@@ -9,8 +9,8 @@ $categories = Category::getAll($conn);
 $_title = 'Owasp Top 10';
 $_bodyClass = 'owasp-page';
 $_owasp = 'active';
+require_once(__DIR__ . '/includes/header.php');
 ?>
-<?php require_once(__DIR__ . '/includes/header.php');  ?>
 
 <div class="container my-5 py-5 main-content">
     <?php if (empty($categories)) : ?>

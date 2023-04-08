@@ -29,7 +29,6 @@ if (isMethod('post')) {
     //display new values in the form.
     $email = $newUser->email;
 
-
     if ($newUser->validate()) {
 
         if ($newUser->getById($conn, $newUser->id)) {
@@ -44,11 +43,10 @@ if (isMethod('post')) {
 
 $_title = 'User - Edit login';
 $_headerClass = 'dark';
+require_once(__DIR__ . '/../includes/header.php');
 ?>
 
-<?php require_once(__DIR__ . '/../includes/header.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
-
     <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
     <?php if ($message) : ?>
         <div class="container-form-page send-message mt-4 py-5">
@@ -65,7 +63,6 @@ $_headerClass = 'dark';
                         <p class="mt-3" class="error"><?= $user_not_found; ?></p>
                     <?php endif; ?>
                     <form method="post">
-
                         <?php if (!empty($newUser->errors)) : ?>
                             <ul>
                                 <?php foreach ($newUser->errors as $error) : ?>

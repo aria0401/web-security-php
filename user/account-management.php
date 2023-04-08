@@ -2,14 +2,11 @@
 
 require_once(__DIR__ . '/../includes/init.php');
 
-?>
-<?php
 $_title = 'User Account';
 $_headerClass = 'dark';
+
+require_once(__DIR__ . '/../includes/header.php');
 ?>
-<?php require_once(__DIR__ . '/../includes/header.php');  ?>
-
-
 
 <?php if (Auth::isLoggedIn()) : ?>
     <div class="main-content">
