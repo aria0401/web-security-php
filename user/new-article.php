@@ -28,13 +28,12 @@ if (isMethod('post')) {
         }
     }
 }
-
-
 ?>
 
 
 <?php $_title = 'User - New Article';
 $_headerClass = 'dark';
+$_newArticle = 'active';
 ?>
 
 <?php require_once(__DIR__ . '/../includes/header.php'); ?>

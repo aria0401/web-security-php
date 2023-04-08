@@ -46,6 +46,7 @@ if (isMethod('post')) {
 
 $_title = 'User - Edit Profile';
 $_headerClass = 'dark';
+$_yourProfile = 'active';
 ?>
 
 <?php require_once(__DIR__ . '/../includes/header.php'); ?>

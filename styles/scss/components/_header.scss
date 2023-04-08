@@ -33,6 +33,10 @@ header {
             color: $secondary-color;
           }
         }
+
+        a.active{
+          color: $secondary-color;
+        }
       }
     }
 }

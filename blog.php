@@ -6,11 +6,10 @@ $conn = require_once(__DIR__ . '/includes/db.php');
 
 $articles = Article::getAll($conn);
 
-// var_dump($articles);
 
-$_title = 'Articles';
-$_nav = true;
-$_bodyClass = 'articles-page';
+$_title = 'Blog';
+$_bodyClass = 'blog-page';
+$_blog = 'active';
 ?>
 <?php require_once(__DIR__ . '/includes/header.php');  ?>
 

@@ -12,6 +12,7 @@ $_title = 'User - Articles Overview';
 $_overview = 'filter-overview';
 $_bodyClass = 'overview-page';
 $_headerClass = 'dark';
+$_yourArticles = 'active';
 ?>
 <?php require_once(__DIR__ . '/../includes/header.php');  ?>
 

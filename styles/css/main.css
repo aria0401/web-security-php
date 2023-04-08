@@ -1,3 +1,4 @@
+/* VARIABLES */
 body {
   margin: 0;
   padding: 0;
@@ -11,60 +12,69 @@ img {
   width: 100%;
 }
 
-.primary-btn {
-  background-color: #EBCC5E;
-  padding: 0.4rem 3rem;
-  border-radius: 0.4rem;
-  color: #000000;
-  text-decoration: none;
+/* BURGER MENU */
+.burger-menu-overlay {
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 110;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #63987C;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.09);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  box-sizing: border-box;
 }
-.primary-btn:hover {
-  color: #fff;
+
+.burger-menu-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .container-form-page {
-  width: 350px;
+  width: 30rem;
   margin: auto;
-  font-size: 0.8rem;
 }
-.container-form-page h1 {
-  font-size: 2rem;
+.container-form-page .form-heading {
+  text-align: center;
+  color: #EBCC5E;
+}
+.container-form-page .p-white {
+  color: #fff;
 }
 .container-form-page .form {
-  border: 1px #ddd solid;
-  border-radius: 4px;
+  border: 10px solid #EBCC5E;
+  border-radius: 0.4rem;
+  background-color: white;
 }
-.container-form-page .form h1 {
-  font-size: 2rem;
+.container-form-page .form .form-group {
+  font-size: 1.3rem;
 }
-.container-form-page .form .form-control {
-  /* height: $input-btn-height; */
-  font-size: 0.8rem;
-}
-.container-form-page .form .form-control:focus {
-  /* border: transparent; */
+.container-form-page .form input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-radius: 0;
   outline: none;
+  box-shadow: none;
+  font-size: 1.3rem;
+  color: #686565;
 }
-.container-form-page .dropdown .dropdown-toggle {
-  font-size: 0.8rem;
-  color: #0066c0;
-}
-.container-form-page .dropdown .dropdown-toggle:hover {
+.container-form-page .form .error {
+  font-size: 0.9rem;
   color: brown;
 }
-.container-form-page .dropdown .dropdown-menu {
-  font-size: 0.8rem;
+.container-form-page .primary-btn {
+  font-size: 1.3rem;
 }
-.container-form-page .dropdown .dropdown-menu li a.dropdown-item {
-  color: #0066c0;
-  background-color: none;
-}
-.container-form-page .dropdown .dropdown-menu li a.dropdown-item:hover {
-  background-color: transparent;
-  color: brown;
-}
-.container-form-page .dropdown .dropdown-menu.show {
-  transform: translate(0px, 18px);
+@media screen and (max-width: 450px) {
+  .container-form-page {
+    width: 100%;
+  }
 }
 
 header {
@@ -74,7 +84,7 @@ header {
   width: 100%;
 }
 header.dark-header {
-  background-color: #25594B;
+  background-color: #63987C;
 }
 header .navbar {
   width: 100%;
@@ -95,6 +105,9 @@ header .navbar .nav-labels a {
   font-size: 1.3rem;
 }
 header .navbar .nav-labels a:hover {
+  color: #EBCC5E;
+}
+header .navbar .nav-labels a.active {
   color: #EBCC5E;
 }
 
@@ -126,22 +139,27 @@ nav.admin button a {
   min-height: 90vh;
 }
 
-.index-page {
-  background-color: #25594B;
+.login-page, .sign-up-page {
+  background-color: #63987C;
 }
-.index-page .hero-banner {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
+
+.primary-btn {
+  background-color: #EBCC5E;
+  padding: 0.5rem 4rem;
+  border-radius: 0.4rem;
+  color: #000000;
+  text-decoration: none;
 }
-.index-page .hero-banner .header-1 {
-  color: #EBCC5E;
-  font-size: 4.5rem;
-  line-height: 5rem;
-}
-.index-page .hero-banner .txt {
+.primary-btn:hover {
   color: #fff;
-  font-size: 1.3rem;
+}
+
+.secondary-btn {
+  color: #EBCC5E;
+  text-decoration: none;
+}
+.secondary-btn:hover {
+  color: #fff;
 }
 
 /* COLLAPSIBLE SIDEBAR */
@@ -244,7 +262,27 @@ nav.admin button a {
   color: #fff;
   font-family: "Roboto";
   font-weight: 300;
-  background-color: #25594B;
+  background-color: #63987C;
 }
+
+.index-page {
+  background-color: #63987C;
+}
+.index-page .hero-banner {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+.index-page .hero-banner .header-1 {
+  color: #EBCC5E;
+  font-size: 4.5rem;
+  line-height: 5rem;
+}
+.index-page .hero-banner .txt {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+/* @import "templates/login-page"; */
 
 /*# sourceMappingURL=main.css.map */

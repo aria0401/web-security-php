@@ -8,6 +8,7 @@
      $("#formUserValidate").validate();
  </script>
  <script src="/js/modal.js"></script>
+ <script src="/js/burger-menu.js"></script>
  </div>
  </body>
 

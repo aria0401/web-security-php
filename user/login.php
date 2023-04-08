@@ -23,41 +23,41 @@ if (isMethod('post')) {
 }
 ?>
 <?php $_title = 'User - Log in';
-$_headerClass = 'light';
+$_bodyClass = 'login-page';
+$_login = 'active';
 ?>
 <?php require_once(__DIR__ . '/../includes/header.php');  ?>
-
-<div class="container-form-page mt-4 py-5 main-content">
-    <div class="form p-4">
-        <h1>Log in</h1>
-        <form method="post" id="formUserValidate">
-            <?php if (!empty($error)) : ?>
-                <p class="error"><?= $error; ?></p>
-            <?php endif; ?>
-            <?php if (!empty($user->errors)) : ?>
-                <ul>
-                    <?php foreach ($user->errors as $error) : ?>
-                        <li class="error"><?= $error; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input class="form-control" type="text" name="username" id="username" value="<?= htmlspecialchars($user->username); ?>" required autofocus>
-            </div>
-            <div class="form-group mt-2">
-                <label for="password">password</label>
-                <input class="form-control" type="password" name="password" id="password" value="<?= htmlspecialchars($user->password); ?>" minlength="2" maxlength="5" required>
-            </div>
-            <button class="btn primary_button w-100 mt-3">Log in</button>
-        </form>
-    </div>
-    <div class="mt-3">
-        <a href="/user/sign-up.php">
-            <button class="btn secondary_button w-100">Create your account</button>
-        </a>
+<div class="container">
+    <div class="container-form-page mt-4 py-5 main-content">
+        <h1 class="form-heading mb-4">Log In</h1>
+        <div class="form p-4 px-lg-5">
+            <form method="post" id="formUserValidate">
+                <?php if (!empty($error)) : ?>
+                    <p class="error"><?= $error; ?></p>
+                <?php endif; ?>
+                <?php if (!empty($user->errors)) : ?>
+                    <ul>
+                        <?php foreach ($user->errors as $error) : ?>
+                            <li class="error"><?= $error; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <div class="form-group my-4">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" name="username" id="username" value="<?= htmlspecialchars($user->username); ?>" required autofocus>
+                </div>
+                <div class="form-group my-4">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password" value="<?= htmlspecialchars($user->password); ?>" minlength="2" maxlength="5" required>
+                </div>
+                <button class="btn primary-btn w-100 my-4">Log in</button>
+            </form>
+        </div>
+        <div class="mt-3">
+            <a href="/user/sign-up.php">
+                <button class="btn secondary-btn w-100">Or create your account</button>
+            </a>
+        </div>
     </div>
 </div>
-
-
 <?php require_once(__DIR__ . '/../includes/footer.php'); ?>

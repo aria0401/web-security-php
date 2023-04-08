@@ -8,9 +8,10 @@ $categories = Category::getAll($conn);
 
 ?>
 <?php
-$_title = 'Home';
+$_title = 'Web Security | Home';
 $_bodyClass = 'index-page';
 $_headerClass = 'dark-header';
+$_homePage = 'active';
 ?>
 <?php require_once(__DIR__ . '/includes/header.php');  ?>
 

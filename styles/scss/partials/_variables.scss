@@ -1,11 +1,14 @@
-//VARIABLES
-
-$primary-color: #25594B;
+/* VARIABLES */
+// $primary-color: #25594B;
+$primary-color: #63987C;
 $secondary-color: #EBCC5E;
 $white: #fff;
 $black: #000000;
 $big-header: 4.5rem;
 $line-height-big-header: 5rem;
+$error-color: brown;
+$form-font-size: 1.3rem;
+$form-input-color: #686565;
 
 
 $secondary-color-dark: #21374B;
@@ -13,8 +16,7 @@ $secondary-color-orange: #F7941D;
 $accent-color: rgb(245, 245, 245);
 $bg-color-nav: #063574;
 $logo-width: 30%;
-$error-color: brown;
-$form-font-size: 0.8rem;
+
 $btn-main-bg-color: #f3d078;
 $btn-border-color: 1px solid #8f8d8d;
 $btn-box-shadow: 0 1px 0 rgb(255 255 255 / 60%) inset;

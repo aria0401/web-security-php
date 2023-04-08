@@ -1,0 +1,49 @@
+.container-form-page {
+  width: 30rem;
+  margin: auto;
+
+  .form-heading{
+    text-align: center;
+    color: $secondary-color;
+  }
+
+  .p-white{
+    color: $white;
+  }
+
+  .form {
+    border: 10px solid $secondary-color;
+    border-radius: .4rem;
+    background-color: white;
+
+    .form-group{
+      font-size: $form-font-size;
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid $black;
+      border-radius: 0;
+      outline: none;
+      box-shadow: none;
+      font-size: $form-font-size;
+      color: $form-input-color;
+ 
+    }
+
+    .error{
+      font-size: .9rem;
+      color: $error-color;
+    }
+
+  }
+
+  .primary-btn{
+    font-size: $form-font-size;
+  }
+
+  @media screen and (max-width: 450px){
+    width: 100%;
+  }
+}
+

@@ -7,8 +7,8 @@ $conn = require_once(__DIR__ . '/includes/db.php');
 $categories = Category::getAll($conn);
 
 $_title = 'Owasp Top 10';
-$_nav = true;
 $_bodyClass = 'owasp-page';
+$_owasp = 'active';
 ?>
 <?php require_once(__DIR__ . '/includes/header.php');  ?>
 

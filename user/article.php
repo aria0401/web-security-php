@@ -22,7 +22,7 @@ $_headerClass = 'dark';
 <?php require_once(__DIR__ . '/../includes/modal.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
     <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
-    <div class="container py-5">
+    <div class="container py-5 main-content">
 
         <?php if ($article) : ?>
             <article class="row py-5">

@@ -39,17 +39,19 @@ $_headerClass = 'dark';
 <?php require_once(__DIR__ . '/../includes/modal.php'); ?>
 <?php if (Auth::isLoggedIn()) : ?>
     <?php require_once(__DIR__ . '/../includes/user_nav.php'); ?>
-    <?php if ($authenticated) : ?>
-        <h2>Delete Article</h2>
-        <form method="post">
-            <p>Are you sure you want to delete this article: <?= $article->title; ?> ?</p>
-            <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? ''; ?>">
-            <button class="btn">Delete</button>
-            <a href="article.php?id=<?= $article->id; ?>">Cancel</a>
-        </form>
-    <?php else : ?>
-        <h2>You don't have permission to edit this article.</h2>
-    <?php endif; ?>
+    <div class="container main-content">
+        <?php if ($authenticated) : ?>
+            <h2>Delete Article</h2>
+            <form method="post">
+                <p>Are you sure you want to delete this article: <?= $article->title; ?> ?</p>
+                <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? ''; ?>">
+                <button class="btn">Delete</button>
+                <a href="article.php?id=<?= $article->id; ?>">Cancel</a>
+            </form>
+        <?php else : ?>
+            <h2>You don't have permission to edit this article.</h2>
+        <?php endif; ?>
+    </div>
 <?php else :
     Url::redirect('/user/login.php');
 endif; ?>

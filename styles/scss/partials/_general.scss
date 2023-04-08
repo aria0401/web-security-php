@@ -11,5 +11,31 @@ img {
   width: 100%;
 }
 
+/* BURGER MENU */
+
+.burger-menu-overlay{
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 110;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $primary-color;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.09);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  box-sizing: border-box;
+
+}
+
+.burger-menu-overlay.active{
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
 
 
