@@ -13,7 +13,6 @@ class Article {
 
     /** Validate all the data in the $_POST[] super global array */
     public function validate() {
-        //in new-article, edit-article
 
         if (isset($this->title) && $this->title == '') {
             $this->errors[] = 'Title is required';
@@ -40,7 +39,6 @@ class Article {
 
     /** Insert a new article with its current property values */
     public function create($conn) {
-        //in new-article
 
         $sql = "INSERT INTO article (title, description, is_visble)
                     VALUES(:title, :description, :is_visible)";
@@ -60,7 +58,6 @@ class Article {
 
     /** Update the article with its current property values */
     public function update($conn) {
-        //in edit-article
 
         $sql = "UPDATE article 
                     SET title = :title,
@@ -84,7 +81,6 @@ class Article {
 
     /** Delete the current article */
     public function delete($conn) {
-        //in delete-article
 
         $sql = "DELETE FROM article WHERE id = :id";
 
@@ -96,7 +92,6 @@ class Article {
 
     /** Get all the articles from the db */
     public static function getAll($conn) {
-        //in index, admin/index
 
         $sql = "SELECT * 
         FROM article";
@@ -108,7 +103,6 @@ class Article {
 
     /** Get the article record based on its ID  */
     public static function getById($conn, $id, $columns = '*') {
-        //in article, edit-article
 
         $sql = "SELECT $columns FROM article WHERE id = :id";
 
@@ -121,10 +115,8 @@ class Article {
         }
     }
 
-
     /** Get the articles by category from the db */
     public static function getByCategory($conn, $category) {
-        //in article-overview, sidebar
 
         $sql = "SELECT a.*, ca.name AS category_name, ca.id as category_id, ca.title as category_title
         FROM article a
@@ -160,7 +152,6 @@ class Article {
 
     /*** Get the article record based on the ID along with associated categories, if any */
     public static function getWithCategories($conn, $id) {
-        //in admin/article
 
         $sql = "SELECT article.*, category.name AS category_name, category.title as category_title
                  FROM article LEFT JOIN article_category
@@ -178,7 +169,6 @@ class Article {
 
     /** * Get the article's categories */
     public function getCategories($conn) {
-        //in admin/edit article
 
         $sql = "SELECT category.* 
         FROM category  
@@ -195,7 +185,6 @@ class Article {
 
     /** Set the articles categories */
     public function setCategories($conn, $ids) {
-        //in admin/edit-article
 
         if ($ids) {
             $sql = "INSERT IGNORE INTO article_category (article_id, category_id)
@@ -235,7 +224,6 @@ class Article {
 
     /** Update the image file property */
     public function setImageFile($conn, $filename) {
-        //in edit-article-image
 
         $sql = "UPDATE article 
                 SET image_file = :image_file
@@ -249,7 +237,6 @@ class Article {
 
     /** User creates a new article */
     public function userCreateArticle($conn) {
-        // on user/new-article
 
         $sql = "INSERT INTO article (title, description, user_id)
                 VALUES(:title, :description, :user_id)";
@@ -269,7 +256,6 @@ class Article {
 
     /** Get the articles by user id from the db */
     public static function getByUserID($conn, $user_id) {
-        // on user-articles-overview
 
         $sql = "SELECT * FROM article 
                 WHERE user_id = :user_id";
@@ -284,7 +270,6 @@ class Article {
 
     /** Get the comments by article id from the database */
     public static function getComments($conn, $article_id) {
-        // on article.php
 
         $sql = "SELECT co.comment, users.username FROM comments co 
         JOIN users ON co.user_id = users.id
@@ -300,7 +285,6 @@ class Article {
 
     /** Post a comment on the article if the user is logged in */
     public function createComment($conn) {
-        // on article.php
 
         $sql = "INSERT INTO comments 
             VALUES(DEFAULT, :user_id, :article_id, :comment)";

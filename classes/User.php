@@ -7,7 +7,6 @@ class User {
 
     /** Validate all the data in the $_POST[] super global array */
     public function validate() {
-        // in sign-up, login, forgot-password, reset-password, edit-profile
 
         $minLenght = 2;
         $maxLenght = 15;
@@ -84,14 +83,12 @@ class User {
         return empty($this->errors);
     }
 
-    /** Select user where username matches and return true is succesfull */
+    /** Select user where id matches and return true is succesfull */
     public function authenticateUser($conn) {
-        // in sign-up, forgot-password
 
         $sql = "SELECT * FROM users WHERE id = :id";
 
         $stmt = $conn->prepare($sql);
-        // $stmt->bindValue(':username', $this->username, PDO::PARAM_STR);
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         $stmt->execute();
@@ -103,9 +100,8 @@ class User {
         }
     }
 
-    /** Insert new user in db with a hashed password and a verification key */
+    /** Insert new user in db with a hashed password */
     public function create($conn) {
-        // in sign-up.php
 
         $hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
 
@@ -124,24 +120,8 @@ class User {
         }
     }
 
-    /** Select user in daba where verification_key matches and return user as assoc array */
-    public function verifyKey($conn, $verification_key) {
-        //in validate-user.php
-
-        $sql = "SELECT * FROM users WHERE verification_key = :verification_key";
-
-        $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':verification_key', $verification_key, PDO::PARAM_STR_CHAR);
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $stmt->execute();
-
-        $user = $stmt->fetch();
-        return $user;
-    }
-
     /** Update users, set verified to 1 where the user id matches */
     public function verified($conn, $id) {
-        //in validate-user.php
 
         $sql = "UPDATE users SET verified = 1 WHERE id = :id";
 
@@ -155,7 +135,6 @@ class User {
 
     /** Select user in db where username matches and return the verified password */
     public function authenticateLogin($conn, $password) {
-        // in login.php
 
         $sql = "SELECT * FROM users WHERE username = :username";
 
@@ -171,7 +150,6 @@ class User {
 
     /** Check if the user has verified her account */
     public function checkVerified($conn) {
-        // in login.php
 
         $sql = "SELECT * FROM users WHERE username = :username AND verified = 1";
 
@@ -185,63 +163,8 @@ class User {
         }
     }
 
-    /** Update users, set new forgot_password_key where email matches */
-    public function updateForgotPasswordKey($conn) {
-        // in forgot-password.php
-
-        $sql = "UPDATE users SET forgot_password_key = :forgot_password_key
-                    WHERE email = :email";
-
-        $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':forgot_password_key', $this->forgot_password_key, PDO::PARAM_STR_CHAR);
-        $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
-
-        if ($stmt->execute()) {
-            return true;
-        }
-    }
-
-    /** Select user where forgot_password_key matches and return user email */
-    public function authenticateKey($conn) {
-        // in reset-password.php
-
-        $sql = "SELECT * FROM users WHERE forgot_password_key = :forgot_password_key";
-
-        $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':forgot_password_key', $this->forgot_password_key, PDO::PARAM_STR_CHAR);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
-        $stmt->execute();
-
-        if ($user = $stmt->fetch()) {
-            return $user->email;
-        } else {
-            return false;
-        }
-    }
-
-    /** Update users, set new hashed password where forgot_password_key matches */
-    public function updatePassword($conn) {
-        // in reset-password.php
-
-        $hashed_password = password_hash($this->newPassword, PASSWORD_DEFAULT);
-        $new_forgot_password_key = bin2hex(random_bytes(8));
-
-        $sql = "UPDATE users SET password = :password, forgot_password_key = :new_forgot_password_key
-                    WHERE forgot_password_key = :old_forgot_password_key";
-
-        $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':old_forgot_password_key', $this->forgot_password_key, PDO::PARAM_STR_CHAR);
-        $stmt->bindValue(':new_forgot_password_key', $new_forgot_password_key, PDO::PARAM_STR_CHAR);
-        $stmt->bindValue(':password', $hashed_password, PDO::PARAM_STR);
-
-        if ($stmt->execute()) {
-            return true;
-        }
-    }
-
     /** Update users, set new email and password where id matches */
     public function updateLogin($conn) {
-        // in edit-profile.php
 
         $hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
 
@@ -260,7 +183,7 @@ class User {
 
     /** Create user profile, set ocupation and description where id matches */
     public function createProfile($conn) {
-        // in create-profile.php
+
         $sql = "UPDATE users SET ocupation = :ocupation, description = :description, has_profile = 1
         WHERE id = :id";
 
@@ -274,9 +197,9 @@ class User {
         }
     }
 
-    /** Update users, set username and description where id matches */
+    /** Update users, set ocupation and description where id matches */
     public function updateProfile($conn) {
-        // in create-profile.php
+
         $sql = "UPDATE users SET ocupation = :ocupation,  description = :description, has_profile = 1
         WHERE id = :id";
 
@@ -292,7 +215,6 @@ class User {
 
     /** * Select user where username matches and return an user object */
     public static function getByUsername($conn, $username, $columns = '*') {
-        // in: forgot-password, login
 
         $sql = "SELECT $columns
                 FROM users
@@ -309,7 +231,6 @@ class User {
 
     /** * Select user where id matches and return an user object */
     public static function getById($conn, $id, $columns = '*') {
-        // in edit-profile
 
         $sql = "SELECT $columns
                 FROM users
