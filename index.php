@@ -13,40 +13,37 @@ $_homePage = 'active';
 require_once(__DIR__ . '/includes/header.php');
 ?>
 
-<div class="container p-0 main-content mt-5 pt-5">
-    <div class="hero-banner mt-4">
-        <div class="pe-5">
-            <h1 class="header-1">Security for Web Developers</h1>
-            <?php if (Auth::isLoggedIn()) : ?>
-                <div class="dots mt-5">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-            <?php else : ?>
-                <p class="txt mb-5 pe-5">Share your knowledge about common security risks and defence methods.</p>
-                <a class="primary-btn" href="/user/sign-up.php">Sign Up</a>
-            <?php endif; ?>
-        </div>
-        <div class="hero-image">
-            <img src="/media/site-images/home-illustration.svg">
+<div class="main-content">
+    <div class="hero-banner py-3 py-lg-5">
+        <div class="hero-banner-wrapper container px-lg-0 py-3 pb-md-5 my-3 my-md-5">
+            <div class="pe-lg-5 py-3 py-md-0">
+                <h1 class="header-1 mb-3 mb-lg-5">Security for Web Developers</h1>
+                <p class="txt mb-5 pe-lg-5">Share your knowledge about common security risks and defence methods.</p>
+                <?php if (Auth::isLoggedIn()) : ?>
+                    <a class="primary-btn" href="/user/articles-overview.php">Your Articles</a>
+                <?php else : ?>
+                    <a class="primary-btn" href="/user/sign-up.php">Sign Up</a>
+                <?php endif; ?>
+            </div>
+            <div class="hero-image d-flex justify-content-center justify-content-md-end">
+                <img src="/media/site-images/home-illustration.svg">
+            </div>
         </div>
     </div>
-    <div class="my-5 py-5">
+    <div class="container my-3 my-lg-5 py-5">
         <?php if (empty($categories)) : ?>
             <p>No articles found.</p>
         <?php else : ?>
-            <div class="categories-wrapper row">
+            <h2 class="grid-header text-center mb-5 pb-4">Security Risks</h2>
+            <div class="categories-wrapper py-lg-5 my-5">
                 <?php foreach ($categories as $category) : ?>
-                    <div class="category-box mb-3">
+                    <div class="category-item">
                         <a class="category-cta" href="articles-overview.php?category=<?= $category['name']; ?>">
                             <div class="category-image d-flex align-items-center justify-content-center">
+                                <img src="media/category-icons/<?= $category['name'] . '.svg'; ?>" alt="<?= $category['title']; ?>">
                             </div>
-                            <div class="category-text">
-                                <h4><?= htmlspecialchars($category['title']); ?></h4>
-                                <!-- <p><?= substr(htmlspecialchars($category['description']), 0, 130) . ' ...';  ?></p> -->
-                                <!-- <button class="cta tertiary_button"><?= htmlspecialchars($category['cta']); ?></button> -->
+                            <div class="category-text py-5 text-center">
+                                <h3><?= htmlspecialchars($category['title']); ?></h3>
                             </div>
                         </a>
                     </div>

@@ -16,8 +16,8 @@
 
 <body class="<?= $_bodyClass ?? null ?>">
     <div class="site-content">
-        <header>
-            <div class="container p-0">
+        <header class="d-flex align-items-center">
+            <div class="container px-lg-0">
                 <?php if (Auth::isLoggedIn()) : ?>
                     <?php require_once(__DIR__ . '/user_nav_logged_in.php'); ?>
                 <?php else : ?>

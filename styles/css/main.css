@@ -57,7 +57,7 @@ img {
 }
 .container-form-page .form input {
   border: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #37474F;
   border-radius: 0;
   outline: none;
   box-shadow: none;
@@ -149,7 +149,7 @@ nav.admin button a {
   background-color: #EBCC5E;
   padding: 0.5rem 4rem;
   border-radius: 0.4rem;
-  color: #000000;
+  color: #37474F;
   text-decoration: none;
 }
 .primary-btn:hover {
@@ -267,22 +267,72 @@ nav.admin button a {
   background-color: #63987C;
 }
 
-.index-page {
+.index-page .hero-banner {
   background-color: #63987C;
 }
-.index-page .hero-banner {
+.index-page .hero-banner-wrapper {
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: center;
 }
-.index-page .hero-banner .header-1 {
+.index-page .header-1 {
   color: #EBCC5E;
   font-size: 4.5rem;
   line-height: 5rem;
 }
-.index-page .hero-banner .txt {
+.index-page .txt {
   color: #fff;
   font-size: 1.3rem;
+}
+.index-page .hero-image img {
+  width: 80%;
+}
+.index-page .grid-header {
+  font-size: 4rem;
+  color: #63987C;
+}
+.index-page .categories-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+.index-page .category-cta {
+  text-decoration: none;
+  color: #37474F;
+  transition: 0.2s;
+}
+.index-page .category-cta:hover {
+  color: #63987C;
+}
+.index-page .category-item {
+  box-shadow: -1px 2px 8px 0px rgba(184, 184, 184, 0.48);
+  -webkit-box-shadow: -1px 2px 8px 0px rgba(184, 184, 184, 0.48);
+  -moz-box-shadow: -1px 2px 8px 0px rgba(184, 184, 184, 0.48);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .index-page .header-1 {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  .index-page .grid-header {
+    font-size: 3rem;
+  }
+  .index-page .categories-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .index-page .hero-banner-wrapper {
+    grid-template-columns: auto;
+    grid-gap: 4rem;
+  }
+  .index-page .categories-wrapper {
+    grid-template-columns: auto;
+    gap: 2rem;
+  }
 }
 
 /* @import "templates/login-page"; */

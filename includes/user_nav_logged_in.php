@@ -4,7 +4,6 @@
     </div>
     <nav>
         <ul class="nav-labels">
-            <li><a class="d-none d-lg-block <?= $_owasp ?? ' ' ?>" href="/owasp-top-10.php">OWASP Top 10</a></li>
             <li><a class="d-none d-lg-block <?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
         </ul>
     </nav>
@@ -26,7 +25,6 @@
             <!-- <div><?= $_SESSION['username'] ?></div> -->
             <ul class="d-flex flex-column align-items-end nav-labels burger-menu-labels">
                 <li><a class="<?= $_homePage ?? ' ' ?>" href="/">Home</a></li>
-                <li class="d-lg-none"><a class="<?= $_owasp ?? ' ' ?>" href="/owasp-top-10.php">OWASP Top 10</a></li>
                 <li class="d-lg-none"><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
                 <li><a class="<?= $_yourArticles ?? ' ' ?>" href="/user/articles-overview.php">Your articles</a></li>
                 <li><a class="<?= $_newArticle ?? ' ' ?>" href="/user/new-article.php">Create new article</a></li>
