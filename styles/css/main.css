@@ -8,6 +8,15 @@ body {
   flex-direction: column;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Arya";
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
 img {
   width: 100%;
 }
@@ -34,6 +43,11 @@ img {
   visibility: visible;
   opacity: 1;
   transform: scale(1);
+}
+
+/* BURGER MENU END */
+.main-content {
+  min-height: 90vh;
 }
 
 .container-form-page {
@@ -106,6 +120,9 @@ header .nav-labels a:hover {
 header .nav-labels a.active {
   color: #EBCC5E;
 }
+header .menu-icon {
+  cursor: pointer;
+}
 header .burger-menu-labels {
   list-style: none;
 }
@@ -137,14 +154,6 @@ nav.admin button a {
   color: #21374B;
 }
 
-.main-content {
-  min-height: 90vh;
-}
-
-.login-page, .sign-up-page {
-  background-color: #63987C;
-}
-
 .primary-btn {
   background-color: #EBCC5E;
   padding: 0.5rem 4rem;
@@ -157,11 +166,11 @@ nav.admin button a {
 }
 
 .secondary-btn {
-  color: #EBCC5E;
+  color: #37474F;
   text-decoration: none;
 }
 .secondary-btn:hover {
-  color: #fff;
+  color: #EBCC5E;
 }
 
 /* COLLAPSIBLE SIDEBAR */
@@ -220,17 +229,35 @@ nav.admin button a {
 .sidebar-desktop ul {
   list-style: none;
   padding-left: 1rem;
+  cursor: pointer;
 }
 .sidebar-desktop ul li {
   color: #111;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   border-bottom: 1px solid #e7e7e7;
   width: 96%;
 }
 .sidebar-desktop ul li:hover {
-  color: brown;
+  color: #63987C;
 }
 
+.d-none-desktop {
+  display: none;
+}
+
+.d-none-mobile {
+  display: block;
+}
+
+@media screen and (max-width: 450px) {
+  .d-none-desktop {
+    display: block;
+  }
+
+  .d-none-mobile {
+    display: none;
+  }
+}
 .myModal {
   display: none;
   height: 100vh;
@@ -311,6 +338,10 @@ nav.admin button a {
   border-radius: 1rem;
   overflow: hidden;
 }
+.index-page .text-wrapper {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
 @media screen and (max-width: 768px) {
   .index-page .header-1 {
     font-size: 3rem;
@@ -333,6 +364,55 @@ nav.admin button a {
     grid-template-columns: auto;
     gap: 2rem;
   }
+  .index-page .category-item {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+body.overview-page .category-title, .blog-page .category-title {
+  color: #63987C;
+}
+body.overview-page .article-a, .blog-page .article-a {
+  text-decoration: none;
+  color: #37474F;
+  transition: 0.2s;
+}
+body.overview-page .article-a:hover article, .blog-page .article-a:hover article {
+  background-color: #f3f7f7ad;
+}
+body.overview-page .article-name, .blog-page .article-name {
+  display: flex;
+  align-items: center;
+  color: #37474F;
+}
+body.overview-page .article-name::before, .blog-page .article-name::before {
+  float: left;
+  content: "";
+  background-image: url(/media/icons/green-arrow.svg);
+  background-size: cover;
+  width: 16px;
+  height: 14px;
+  margin-right: 0.4rem;
+}
+body.overview-page .article-description, .blog-page .article-description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+body.article-page .article-img {
+  height: 20rem;
+  object-fit: cover;
+}
+body.article-page .user-avatar {
+  background-color: #63987C;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 /* @import "templates/login-page"; */

@@ -18,17 +18,17 @@ require_once(__DIR__ . '/includes/header.php');
         <p>No articles found.</p>
     <?php else : ?>
         <div class="articles-wrapper row">
+            <h1>Blog</h1>
             <?php foreach ($articles as $article) : ?>
                 <?php if ($article['is_visible']) : ?>
-                    <div class="category-box mb-3">
-                        <a class="category-cta" href="article.php?id=<?= $article['id']; ?>">
-                            <div class="category-image d-flex align-items-center justify-content-center">
-                            </div>
-                            <div class="category-text">
-                                <h4><?= htmlspecialchars($article['title']); ?></h4>
-                                <p><?= substr(htmlspecialchars($article['description']), 0, 130) . ' ...'; ?></p>
-                                <button class="cta tertiary_button"><?= htmlspecialchars($category['cta']); ?></button>
-                            </div>
+                    <div class="item mb-4">
+                        <a class="article-a" href="article.php?id=<?= $article['id']; ?>">
+                            <article class="d-flex flex-row">
+                                <div>
+                                    <h3 class="article-name"><?= htmlspecialchars($article['title']); ?></h3>
+                                    <p class="article-description"><?= substr(htmlspecialchars($article['description']), 0, 200) . ' ...'; ?></p>
+                                </div>
+                            </article>
                         </a>
                     </div>
                 <?php endif; ?>

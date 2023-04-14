@@ -7,6 +7,15 @@ body {
   flex-direction: column;
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-family: $primary-font;
+}
+
+p{
+  font-family: $secondary-font;
+  font-weight: $font-regular;
+}
+
 img {
   width: 100%;
 }
@@ -36,6 +45,12 @@ img {
   opacity: 1;
   transform: scale(1);
 }
+
+/* BURGER MENU END */
+
+.main-content{
+  min-height: 90vh;
+} 
 
 
 

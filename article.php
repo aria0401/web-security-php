@@ -30,45 +30,52 @@ if (isMethod('post')) {
 }
 
 $_title = 'Article';
-$_nav = true;
+$_bodyClass = 'article-page';
 require_once(__DIR__ . '/includes/header.php');
 ?>
 
-<div class="container-fluid overview-container" id="main-sidebar">
+<div class="container overview-container" id="main-sidebar">
     <button class="openbtn d-none-desktop" id="openNav">☰ See more categories</button>
     <div id="mySidebar" class="sidebar d-none-desktop">
         <?php require(__DIR__ . '/includes/sidebar.php');  ?>
     </div>
-    <div class="row">
+    <div class="row mt-5 pt-4">
         <div class="col-3 sidebar-desktop d-none-mobile">
+            <h3 class="">Categories</h3>
             <?php require(__DIR__ . '/includes/sidebar.php');  ?>
         </div>
-        <div class="col-12 col-sm-9 main-content mt-5">
-            <div class="mt-5">
+        <div class="col-12 col-sm-7 mx-auto main-content ">
+            <div class="">
                 <?php if ($article) : ?>
                     <article class="row">
+                        <h1 class="mb-5"><?= htmlspecialchars($article->title); ?></h1>
                         <?php if ($article->image_file) : ?>
-                            <div class="col-11 col-lg-4 mx-auto">
-                                <img class="mb-3" src="../uploads/articles/<?= $article->image_file; ?>" alt="articles image">
+                            <div class="mb-5">
+                                <img class="article-img mb-3" src="../uploads/articles/<?= $article->image_file; ?>" alt="articles image">
                             </div>
                         <?php endif; ?>
-                        <div class="col-11 col-lg-8 mx-auto row">
-                            <h2 class="w-lg-75 mb-4 p-0 px-md-2"><?= htmlspecialchars($article->title); ?></h2>
-                            <p class="w-lg-75 p-0 px-md-2"><?= htmlspecialchars($article->description); ?></p>
+                        <div class="mb-5">
+                            <p class="article-text"><?= htmlspecialchars($article->description); ?></p>
                         </div>
                     </article>
                     <?php if ($comments) : ?>
-                        <div class="comments-wrapper mt-5">
+                        <div class="comments-wrapper mb-5 pb-5">
+                            <h3 class="mb-5">All comments in this article <span>(<?= count($comments); ?>)</span></h3>
                             <?php foreach ($comments as $comment) : ?>
-                                <div class="comment mb-3">
-                                    <p class="mt-2 mb-0"><?= htmlspecialchars($comment['comment']); ?></p>
-                                    <span class="small"><?= htmlspecialchars($comment['username']) ?></span>
+                                <div class="comment d-flex align-items-center mb-3">
+                                    <div class="user-avatar me-4"><?= strtoupper(substr(htmlspecialchars($comment['username']), 0, 1)); ?></div>
+                                    <div class="user-comment">
+                                        <p class="mt-2 mb-0"><?= htmlspecialchars($comment['comment']); ?></p>
+                                        <span class="small"><?= htmlspecialchars($comment['username']) ?></span>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                    <?php else : ?>
+                        <h5 class="mb-5 pb-5">There are no comments in this article.</h5>
                     <?php endif; ?>
                     <?php if (Auth::isLoggedIn()) : ?>
-                        <div>
+                        <div class="mb-5 pb-5">
                             <form id="form-comment" class="mt-5" method="POST">
                                 <div class="form-group">
                                     <label for="comment">
@@ -83,7 +90,7 @@ require_once(__DIR__ . '/includes/header.php');
                                     <?php endif; ?>
                                     <textarea class="form-control" name="comment" id="comment" cols="30" rows="4"><?= htmlspecialchars($art->comment); ?></textarea>
                                 </div>
-                                <button class="btn primary_button w-10rem mt-3">Post</button>
+                                <button class="btn primary-btn w-10rem my-3">Post</button>
                             </form>
                         </div>
                     <?php endif; ?>

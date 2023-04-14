@@ -43,6 +43,6 @@
             </legend>
         </fieldset>
         <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? ''; ?>">
-        <button class="btn primary_button w-10rem">Save</button>
+        <button class="btn primary-btn w-10rem">Save</button>
     </form>
 </div>

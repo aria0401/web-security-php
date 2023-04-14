@@ -1,6 +1,4 @@
 header {
-  // display: flex;
-  // justify-content: center;
   height: $header-height;
   width: 100%;
   background-color: $primary-color;
@@ -34,6 +32,10 @@ header {
     a.active{
       color: $secondary-color;
     }
+  }
+
+  .menu-icon{
+    cursor: pointer;
   }
 
   .burger-menu-labels{

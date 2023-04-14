@@ -4,7 +4,8 @@
     </div>
     <nav>
         <ul class="nav-labels">
-            <li><a class="d-none d-lg-block <?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
+            <li><a class="d-none d-lg-block <?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
+            <li><a class="d-none d-lg-block <?= $_yourArticles ?? ' ' ?>" href="/user/articles-overview.php">Your articles</a></li>
         </ul>
     </nav>
     <div class="menu-icon d-flex justify-content-end">
@@ -25,8 +26,8 @@
             <!-- <div><?= $_SESSION['username'] ?></div> -->
             <ul class="d-flex flex-column align-items-end nav-labels burger-menu-labels">
                 <li><a class="<?= $_homePage ?? ' ' ?>" href="/">Home</a></li>
-                <li class="d-lg-none"><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
-                <li><a class="<?= $_yourArticles ?? ' ' ?>" href="/user/articles-overview.php">Your articles</a></li>
+                <li class=""><a class="<?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
+                <li class=""><a class="<?= $_yourArticles ?? ' ' ?>" href="/user/articles-overview.php">Your articles</a></li>
                 <li><a class="<?= $_newArticle ?? ' ' ?>" href="/user/new-article.php">Create new article</a></li>
                 <?php if ($_SESSION['has_profile']) : ?>
                     <li><a class="<?= $_yourProfile ?? ' ' ?>" href="/user/edit-profile.php?id=<?= $_SESSION['user_id']; ?>">Your Profile</a></li>

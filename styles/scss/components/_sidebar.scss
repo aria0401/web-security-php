@@ -58,16 +58,35 @@
   ul {
     list-style: none;
     padding-left: 1rem;
+    cursor: pointer;
 
     li {
       color: $body-color;
-      font-size: 0.9rem;
+      font-size: 1.4rem;
       border-bottom: $sidebar-line-color;
       width: 96%;
 
       &:hover {
-        color: $a-hover;
+        color: $primary-color;
       }
     }
+  }
+}
+
+.d-none-desktop {
+  display: none;
+}
+
+.d-none-mobile {
+  display: block;
+}
+
+@media screen and (max-width: 450px) {
+  .d-none-desktop {
+    display: block;
+  }
+
+  .d-none-mobile {
+    display: none;
   }
 }

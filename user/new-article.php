@@ -41,7 +41,7 @@ require_once(__DIR__ . '/../includes/header.php');
             <?php require_once(__DIR__ . '/../includes/article-form.php'); ?>
         <?php else : ?>
             <h2>You need to have a profile to create an article</h2>
-            <button class="btn primary_button w-10rem"><a class="btn" href="create-profile.php?id=<?= $_SESSION['user_id']; ?>">Create Profile</a></button>
+            <button class="btn primary-btn w-10rem"><a class="btn" href="create-profile.php?id=<?= $_SESSION['user_id']; ?>">Create Profile</a></button>
         <?php endif; ?>
     </div>
 <?php else :

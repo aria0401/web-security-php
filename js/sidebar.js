@@ -6,10 +6,10 @@ document.querySelectorAll('[data-action="filter-overview"]').forEach(elm => {
     elm.addEventListener("click", () => {
 
         document.querySelectorAll('.sidebar-li').forEach(li =>{
-            li.style.color = "#111";
+            li.style.color = "#37474F";
         })
 
-        elm.style.color = "brown";
+        elm.style.color = "#63987C";
         filterOverviewPage();
 
         if (window.innerWidth < 700) {
@@ -66,12 +66,9 @@ function displayArticles(articles, categoryTitle) {
             if (elm.is_visible == '1') {
                 
                 const clone = template.cloneNode(true).content;
-                clone.querySelector("h2.article_name").textContent = elm.title;
-                clone.querySelector("p.article_description").textContent = elm.description;
-                if (elm.image_file) {
-                    clone.querySelector("img.article_img").src = "/uploads/articles/" + elm.image_file;
-                }
-                clone.querySelector("a.article_a").setAttribute("href", `article.php?id=${elm.id}`);
+                clone.querySelector(".article-name").textContent = elm.title;
+                clone.querySelector(".article-description").textContent = elm.description;
+                clone.querySelector(".article-a").setAttribute("href", `article.php?id=${elm.id}`);
     
                 contentWrapper.appendChild(clone);
             }

@@ -1,0 +1,19 @@
+body.article-page{
+    
+    .article-img{
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    .user-avatar{
+        background-color: $primary-color;
+        color: $white;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+}

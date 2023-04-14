@@ -11,10 +11,10 @@
 }
 
 .secondary-btn{
-    color: $secondary-color;
+    color: $black;
     text-decoration: none;
     
     &:hover{
-        color: $white;
+        color: $secondary-color;
     }
 }

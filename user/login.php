@@ -15,7 +15,7 @@ if (isMethod('post')) {
 
             $userObj = User::getByUsername($conn, $user->username);
             Auth::login($userObj);
-            Url::redirect('/blog.php');
+            Url::redirect('/');
         } else {
             $error = 'Login incorrect. Make sure you have the right credentials.';
         }

@@ -56,6 +56,11 @@
 
   }
 
+  .text-wrapper{
+    font-family: $secondary-font;
+    font-weight: 300;
+  }
+
   @media screen and (max-width: 768px) {
 
     .header-1{
@@ -83,6 +88,11 @@
     .categories-wrapper{
       grid-template-columns: auto;
       gap: 2rem;
+    }
+
+    .category-item{
+      width: 80%;
+      margin: auto;
     }
   }
 

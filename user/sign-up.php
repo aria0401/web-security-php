@@ -66,7 +66,7 @@ require_once(__DIR__ . '/../includes/header.php');
                 </form>
             </div>
             <div class="mt-3">
-                <p class="p-white">Already have an account? <a class="secondary-btn mx-3" href="/user/login.php">Log in</a></p>
+                <p class="text-center">Already have an account? <a class="secondary-btn mx-3" href="/user/login.php">Log in</a></p>
             </div>
         </div>
     </div>

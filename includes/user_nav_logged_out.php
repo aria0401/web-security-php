@@ -4,7 +4,7 @@
     </div>
     <nav class="nav-desktop d-none d-lg-flex mt-5">
         <ul class="d-flex nav-labels align-items-end">
-            <li><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
+            <li><a class="<?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
             <li><a class="<?= $_login ?? ' ' ?>" href="/user/login.php">Log in</a></li>
             <li><a class="<?= $_sign_up ?? ' ' ?>" href="/user/sign-up.php">Sign Up</a></li>
         </ul>
@@ -25,7 +25,7 @@
         <nav>
             <ul class="nav-labels burger-menu-labels d-flex flex-column align-items-end">
                 <li><a class="<?= $_homePage ?? ' ' ?>" href="/">Home</a></li>
-                <li><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
+                <li><a class="<?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
                 <li><a class="<?= $_login ?? ' ' ?>" href="/user/login.php">Log in</a></li>
                 <li><a class="<?= $_sign_up ?? ' ' ?>" href="/user/sign-up.php">Sign Up</a></li>
             </ul>

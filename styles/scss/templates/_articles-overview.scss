@@ -1,0 +1,42 @@
+
+body.overview-page, .blog-page{
+
+    .category-title{
+        color: $primary-color;
+    }
+
+    .article-a{
+        text-decoration: none;
+        color: $black;
+        transition: .2s;
+
+        &:hover {
+            article{
+                background-color: #f3f7f7ad;
+            }
+
+        }
+    }
+
+    .article-name{
+        display: flex;
+        align-items: center;
+        color: $black;
+
+        &::before{
+            float: left;
+            content: "";
+            background-image: url(/media/icons/green-arrow.svg);
+            background-size: cover;
+            width: 16px;
+            height: 14px;
+            margin-right: .4rem;
+        }
+
+    }
+
+    .article-description{
+        font-family: $secondary-font;
+        font-weight: 300;
+    }
+}
