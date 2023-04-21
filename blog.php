@@ -21,10 +21,15 @@ require_once(__DIR__ . '/includes/header.php');
             <h1>Blog</h1>
             <?php foreach ($articles as $article) : ?>
                 <?php if ($article['is_visible']) : ?>
-                    <div class="item mb-4">
+                    <div class="item  mx-auto p-lg-2 mb-4">
                         <a class="article-a" href="article.php?id=<?= $article['id']; ?>">
-                            <article class="d-flex flex-row">
-                                <div>
+                            <article class="row p-3">
+                                <?php if ($article['image_file']) : ?>
+                                    <div class="col-md-2 pe-4 ps-0">
+                                        <img class="article-img mb-3" src="/uploads/articles/<?= $article['image_file']; ?>" alt="articles image">
+                                    </div>
+                                <?php endif; ?>
+                                <div class="col-md-10">
                                     <h3 class="article-name"><?= htmlspecialchars($article['title']); ?></h3>
                                     <p class="article-description"><?= substr(htmlspecialchars($article['description']), 0, 200) . ' ...'; ?></p>
                                 </div>

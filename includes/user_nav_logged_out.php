@@ -1,10 +1,11 @@
 <div class="header-wrapper header-wrapper__logged-out d-flex align-items-baseline justify-content-between">
     <div class="nav-logo">
-        <a class="logo-tx d-flex" href="/"> <img class="logo" src="/media/site-images/logo.svg" alt="">Web Security</a>
+        <a class="logo-tx d-flex align-items-baseline" href="/"> <img class="logo" src="/media/site-images/logo.svg" alt="">Web Security</a>
     </div>
-    <nav class="nav-desktop d-none d-lg-flex mt-5">
+    <nav class="nav-desktop d-none d-lg-flex">
         <ul class="d-flex nav-labels align-items-end">
-            <li><a class="<?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
+            <li><a class="<?= $_risks ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Security Risks</a></li>
+            <li><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
             <li><a class="<?= $_login ?? ' ' ?>" href="/user/login.php">Log in</a></li>
             <li><a class="<?= $_sign_up ?? ' ' ?>" href="/user/sign-up.php">Sign Up</a></li>
         </ul>
@@ -25,7 +26,8 @@
         <nav>
             <ul class="nav-labels burger-menu-labels d-flex flex-column align-items-end">
                 <li><a class="<?= $_homePage ?? ' ' ?>" href="/">Home</a></li>
-                <li><a class="<?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
+                <li><a class="<?= $_risks ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Security Risks</a></li>
+                <li><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
                 <li><a class="<?= $_login ?? ' ' ?>" href="/user/login.php">Log in</a></li>
                 <li><a class="<?= $_sign_up ?? ' ' ?>" href="/user/sign-up.php">Sign Up</a></li>
             </ul>

@@ -107,6 +107,9 @@ header .logo {
 header .logo-tx {
   font-size: 26px;
 }
+header .logo-tx:hover {
+  color: #EBCC5E;
+}
 header .nav-labels {
   list-style: none;
 }
@@ -160,6 +163,8 @@ nav.admin button a {
   border-radius: 0.4rem;
   color: #37474F;
   text-decoration: none;
+  text-align: center;
+  width: 14rem;
 }
 .primary-btn:hover {
   color: #fff;
@@ -171,6 +176,27 @@ nav.admin button a {
 }
 .secondary-btn:hover {
   color: #EBCC5E;
+}
+
+.tertiary-btn {
+  color: #EBCC5E;
+  background-color: transparent;
+  border: 1px solid;
+  padding: 0 3rem;
+  text-align: center;
+}
+.tertiary-btn:hover {
+  border: 1px solid transparent;
+}
+
+.danger-btn {
+  color: #fff;
+  background-color: brown;
+  border-color: brown;
+  text-align: center;
+}
+.danger-btn:hover {
+  background-color: #a52a2aed;
 }
 
 /* COLLAPSIBLE SIDEBAR */
@@ -249,7 +275,7 @@ nav.admin button a {
   display: block;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 992px) {
   .d-none-desktop {
     display: block;
   }
@@ -285,6 +311,13 @@ nav.admin button a {
   background-color: white;
   padding: 40px;
   z-index: 999;
+}
+@media screen and (max-width: 450px) {
+  .myModal .myMessage {
+    top: 30vh;
+    left: 10%;
+    width: 80%;
+  }
 }
 
 .footer {
@@ -342,6 +375,21 @@ nav.admin button a {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
+.index-page .category-name {
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 1300px) {
+  .index-page .categories-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .index-page .categories-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .index-page .header-1 {
     font-size: 3rem;
@@ -349,10 +397,6 @@ nav.admin button a {
   }
   .index-page .grid-header {
     font-size: 3rem;
-  }
-  .index-page .categories-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
   }
 }
 @media screen and (max-width: 450px) {

@@ -18,6 +18,7 @@ class Database {
         $db_pass = "p)1-qWpLFhj(w71W";
 
 
+
         $dsn = 'mysql:host=' . $db_host . '; dbname=' . $db_name . ';charset=utf8mb4';
 
         try {

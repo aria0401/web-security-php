@@ -50,8 +50,8 @@ require_once(__DIR__ . '/../includes/header.php');
 
 <?php if (Auth::isLoggedIn()) : ?>
     <?php if ($authenticated) : ?>
-        <div class="container mb-5">
-            <h2 class="my-3">Edit Article</h2>
+        <div class="container my-5 py-lg-5">
+            <h1 class="my-3">Edit Article</h1>
             <?php require_once(__DIR__ . '/../includes/article-form.php'); ?>
         </div>
     <?php else : ?>

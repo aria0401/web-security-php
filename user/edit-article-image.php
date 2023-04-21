@@ -57,15 +57,19 @@ require_once(__DIR__ . '/../includes/modal.php');
 ?>
 
 <?php if (Auth::isLoggedIn()) : ?>
-    <div class="container py-5 main-content">
+    <div class="container my-5 main-content">
         <?php if ($article) : ?>
-            <article class="row py-5">
-                <h2 class="col-12"><?= htmlspecialchars($article->title); ?></h2>
-                <p class="col-12"><?= htmlspecialchars($article->description); ?></p>
+            <article class="py-lg-5 row">
                 <?php if ($article->image_file) : ?>
-                    <img class="col-3" src="../uploads/articles/<?= $article->image_file; ?>" alt="article image">
-                    <a id="deleteBtn" class="col-12" href="delete-article-image.php?id=<?= $article->id; ?>">Delete Image</a>
+                    <div class="d-flex flex-column col-lg-3 mb-4 mb-lg-2">
+                        <img class="" src="../uploads/articles/<?= $article->image_file; ?>" alt="article image">
+                        <a id="deleteBtn" class="primary-btn danger-btn mt-4" href="delete-article-image.php?id=<?= $article->id; ?>">Delete Image</a>
+                    </div>
                 <?php endif; ?>
+                <div class="mb-4 col-lg-7">
+                    <h1 class="mb-3"><?= htmlspecialchars($article->title); ?></h1>
+                    <p class=""><?= htmlspecialchars($article->description); ?></p>
+                </div>
             </article>
         <?php else : ?>
             <p>We could not find this article.</p>
@@ -84,7 +88,7 @@ require_once(__DIR__ . '/../includes/modal.php');
                 <input class="btn" type="file" name="file" id="file">
             </div>
             <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? ''; ?>">
-            <button class="btn primary_button w-10rem">Upload</button>
+            <button class="btn primary-btn w-10rem mt-3">Upload</button>
         </form>
     </div>
 <?php else :

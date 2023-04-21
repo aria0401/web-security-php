@@ -44,7 +44,7 @@ require_once(__DIR__ . '/includes/header.php');
             <h3 class="">Categories</h3>
             <?php require(__DIR__ . '/includes/sidebar.php');  ?>
         </div>
-        <div class="col-12 col-sm-7 mx-auto main-content ">
+        <div class="col-lg-7 mx-auto main-content">
             <div class="">
                 <?php if ($article) : ?>
                     <article class="row">

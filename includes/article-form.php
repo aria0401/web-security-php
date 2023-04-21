@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
     <?php if (!empty($article->errors)) : ?>
         <ul>
             <?php foreach ($article->errors as $error) : ?>

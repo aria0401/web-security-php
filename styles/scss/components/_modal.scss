@@ -27,4 +27,12 @@
     padding: 40px;
     z-index: 999;
   }
+  @media screen and (max-width: 450px) {
+    .myMessage {
+      top: 30vh;
+      left: 10%;
+      width: 80%;
+    }
+  }
+
 }

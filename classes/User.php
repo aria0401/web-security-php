@@ -86,10 +86,10 @@ class User {
     /** Select user where id matches and return true is succesfull */
     public function authenticateUser($conn) {
 
-        $sql = "SELECT * FROM users WHERE id = :id";
+        $sql = "SELECT * FROM users WHERE username = :username";
 
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $stmt->bindValue(':username', $this->username, PDO::PARAM_STR);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         $stmt->execute();
 

@@ -50,20 +50,20 @@ require_once(__DIR__ . '/../includes/header.php');
 
 <?php if (Auth::isLoggedIn()) : ?>
     <?php if ($message) : ?>
-        <div class="container-form-page send-message mt-4">
+        <div class="container-form-page container send-message mt-4 py-5 main-content">
             <div class="form p-4">
-                <h4 class=""><?= $message; ?></h4>
+                <h2 class=""><?= $message; ?></h2>
             </div>
         </div>
     <?php else : ?>
         <div class="container-form-page mt-4 py-5 main-content">
             <?php if ($authenticated) : ?>
+                <h1 class="form-heading mb-4">Your Profile</h1>
                 <div class=" form p-4 py-5">
-                    <h1 class="">Edit profile when you have one.</h1>
                     <?php if (!empty($user_not_found)) : ?>
                         <p class="mt-3" class="error"><?= $user_not_found; ?></p>
                     <?php endif; ?>
-                    <form method="post">
+                    <form method="post" class="d-flex flex-column">
                         <?php if (!empty($newUser->errors)) : ?>
                             <ul>
                                 <?php foreach ($newUser->errors as $error) : ?>
@@ -71,19 +71,19 @@ require_once(__DIR__ . '/../includes/header.php');
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             <label for="ocupation">Ocupation</label>
                             <input class="form-control" type="text" name="ocupation" id="ocupation" value="<?= htmlspecialchars($ocupation); ?>" placeholder="New username">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="description">Description</label>
                             <textarea class="form-control" name="description" id="" cols="30" rows="10" placeholder="Tell us about you"><?= htmlspecialchars($description); ?></textarea>
                         </div>
-                        <button class="btn primary_button w-100 mt-3">Edit Profile</button>
+                        <button class="btn primary-btn mt-3">Edit Profile</button>
                     </form>
                 </div>
             <?php else : ?>
-                <h2>You don't have permission to edit this user.</h2>
+                <h2 class="mt-5">You don't have permission to edit this user.</h2>
             <?php endif; ?>
         </div>
     <?php endif; ?>

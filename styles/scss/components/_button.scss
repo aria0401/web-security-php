@@ -4,6 +4,8 @@
     border-radius: 0.4rem;
     color: $black;
     text-decoration: none;
+    text-align: center;
+    width: 14rem;
 
     &:hover{
         color: $white;
@@ -16,5 +18,28 @@
     
     &:hover{
         color: $secondary-color;
+    }
+}
+
+.tertiary-btn{
+    color: $secondary-color;
+    background-color: transparent;
+    border: 1px solid;
+    padding: 0 3rem;
+    text-align: center;
+
+    &:hover{
+        border: 1px solid transparent;
+    }
+}
+
+.danger-btn{
+    color: $white;
+    background-color: $error-color;
+    border-color: $error-color;
+    text-align: center;
+
+    &:hover{
+        background-color: #a52a2aed;
     }
 }

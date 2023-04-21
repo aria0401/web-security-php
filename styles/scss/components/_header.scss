@@ -16,6 +16,10 @@ header {
 
   .logo-tx{
     font-size: 26px;
+
+    &:hover{
+      color: $secondary-color;
+    }
   }
 
   .nav-labels{

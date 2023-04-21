@@ -15,20 +15,24 @@ require_once(__DIR__ . '/../includes/header.php');
 ?>
 
 <?php if (Auth::isLoggedIn()) : ?>
-    <div class="container-fluid overview-container main-content" id="main-sidebar">
-        <div class="row">
-            <div class="col-11 col-sm-9 mx-auto main-content">
-                <p class="not-found"> <?= empty($articles) ? 'No articles found' : null; ?> </p>
+    <div class="container overview-container main-content" id="main-sidebar">
+        <div class="row mt-5">
+            <div class="col-11 col-xl-9 main-content">
+                <h1 class="mb-5"> <?= empty($articles) ? 'No articles found' : 'Your Articles'; ?> </h1>
                 <div class="d-flex-wrap" id="articlesList">
                     <?php foreach ($articles as $article) : ?>
                         <div class="item  mx-auto p-lg-2 mb-4">
-                            <a class="article_a" href="article.php?id=<?= $article['id']; ?>">
-                                <article class="d-flex flex-column p-3">
+                            <a class="article-a" href="article.php?id=<?= $article['id']; ?>">
+                                <article class="row p-3">
                                     <?php if ($article['image_file']) : ?>
-                                        <img class="article_img mb-3" src="/uploads/articles/<?= $article['image_file']; ?>" alt="articles image">
+                                        <div class="col-md-2 pe-4 ps-0">
+                                            <img class="article-img mb-3" src="/uploads/articles/<?= $article['image_file']; ?>" alt="articles image">
+                                        </div>
                                     <?php endif; ?>
-                                    <p class="article_name f-08r"><?= htmlspecialchars($article['title']); ?></p>
-                                    <button class="a-sm-txt see-more">Details</button>
+                                    <div class="col-md-10">
+                                        <h3 class="article-name"><?= htmlspecialchars($article['title']); ?></h3>
+                                        <p class="article-description"><?= substr(htmlspecialchars($article['description']), 0, 200) . ' ...'; ?></p>
+                                    </div>
                                 </article>
                             </a>
                         </div>

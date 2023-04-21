@@ -34,14 +34,14 @@ require_once(__DIR__ . '/../includes/modal.php');
 ?>
 
 <?php if (Auth::isLoggedIn()) : ?>
-    <div class="container main-content">
+    <div class="container main-content mt-5 pt-4">
         <?php if ($authenticated) : ?>
             <h2>Delete Article</h2>
             <form method="post">
                 <p>Are you sure you want to delete this article: <?= $article->title; ?> ?</p>
                 <input type="hidden" name="token" value="<?= $_SESSION['token'] ?? ''; ?>">
-                <button class="btn">Delete</button>
-                <a href="article.php?id=<?= $article->id; ?>">Cancel</a>
+                <button class="btn primary-btn danger-btn me-2">Delete</button>
+                <a class="primary-btn" href="article.php?id=<?= $article->id; ?>">Cancel</a>
             </form>
         <?php else : ?>
             <h2>You don't have permission to edit this article.</h2>

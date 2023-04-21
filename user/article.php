@@ -17,13 +17,13 @@ require_once(__DIR__ . '/../includes/modal.php');
 ?>
 
 <?php if (Auth::isLoggedIn()) : ?>
-    <div class="container py-5 main-content">
+    <div class="container py-lg-5 main-content">
         <?php if ($article) : ?>
             <article class="row py-5">
                 <?php if ($article[0]['image_file']) : ?>
-                    <img class="col-4" src="../uploads/articles/<?= $article[0]['image_file']; ?>" alt="articles image">
+                    <img class="col-md-4 mb-4 mb-md-2" src="../uploads/articles/<?= $article[0]['image_file']; ?>" alt="articles image">
                 <?php endif; ?>
-                <div class="col-8">
+                <div class="col-md-8">
                     <h2 class=""><?= htmlspecialchars($article[0]['title']); ?></h2>
                     <p class=""><?= htmlspecialchars($article[0]['description']); ?></p>
                     <?php if ($article[0]['category_name']) : ?>
@@ -41,10 +41,10 @@ require_once(__DIR__ . '/../includes/modal.php');
             <p>We could not find this article.</p>
         <?php endif; ?>
         <div class="mt-4">
-            <a class="btn primary_button w-10rem" href="edit-article.php?id=<?= $article[0]['id']; ?>">Edit</a>
-            <a id="" class="btn primary_button w-10rem" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete</a>
-            <!-- <a id="deleteBtn" class="btn" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete</a> -->
-            <a class="btn primary_button w-10rem" href="edit-article-image.php?id=<?= $article[0]['id']; ?>"><?= $article[0]['image_file'] ? 'Edit Image' : 'Add Image'; ?></a>
+            <a class="btn primary-btn w-14rem mb-2" href="edit-article.php?id=<?= $article[0]['id']; ?>">Edit Article</a>
+            <a class="btn primary-btn w-14rem mb-2" href="edit-article-image.php?id=<?= $article[0]['id']; ?>"><?= $article[0]['image_file'] ? 'Edit Image' : 'Add Image'; ?></a>
+            <!-- <a id="" class="btn primary-btn danger-btn w-10rem" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete</a> -->
+            <a id="deleteBtn" class="btn primary-btn danger-btn w-14rem mb-2" href="delete-article.php?id=<?= $article[0]['id']; ?>">Delete</a>
         </div>
     </div>
 <?php else :

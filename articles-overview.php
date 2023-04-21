@@ -18,7 +18,7 @@ if (isMethod('get')) {
 
 
 $_title = 'Articles Overview';
-$_blog = 'active';
+$_risks = 'active';
 $_overview = 'filter-overview';
 $_bodyClass = 'overview-page';
 require_once(__DIR__ . '/includes/header.php');
@@ -34,7 +34,7 @@ require_once(__DIR__ . '/includes/header.php');
             <h3>Categories</h3>
             <?php require(__DIR__ . '/includes/sidebar.php');  ?>
         </div>
-        <div class="col-11 col-sm-7 mx-auto main-content">
+        <div class="col-lg-7 mx-auto main-content">
             <h1 class="category-title mb-5"> <?= htmlspecialchars($categoryTitle); ?> </h1>
             <p class="not-found"> <?= empty($articles) ? 'No articles found' : null; ?> </p>
 
@@ -46,7 +46,7 @@ require_once(__DIR__ . '/includes/header.php');
                                 <article class="d-flex flex-row p-2">
                                     <div>
                                         <h3 class="article-name"><?= htmlspecialchars($article['title']); ?></h3>
-                                        <p class="article-description"><?= htmlspecialchars($article['description']); ?></p>
+                                        <p class="article-description"><?= substr(htmlspecialchars($article['description']), 0, 200) . '...'; ?></p>
                                     </div>
                                 </article>
                             </a>

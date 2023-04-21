@@ -67,7 +67,7 @@ function displayArticles(articles, categoryTitle) {
                 
                 const clone = template.cloneNode(true).content;
                 clone.querySelector(".article-name").textContent = elm.title;
-                clone.querySelector(".article-description").textContent = elm.description;
+                clone.querySelector(".article-description").textContent = elm.description.substring(0, 200) + '...';
                 clone.querySelector(".article-a").setAttribute("href", `article.php?id=${elm.id}`);
     
                 contentWrapper.appendChild(clone);

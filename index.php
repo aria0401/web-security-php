@@ -30,7 +30,7 @@ require_once(__DIR__ . '/includes/header.php');
             </div>
         </div>
     </div>
-    <div class="home-categories container my-3 my-lg-5 py-5">
+    <div class="home-categories container my-3 my-lg-5 pt-5 pb-2">
         <?php if (empty($categories)) : ?>
             <p>No articles found.</p>
         <?php else : ?>
@@ -43,7 +43,7 @@ require_once(__DIR__ . '/includes/header.php');
                                 <img src="media/category-icons/<?= $category['name'] . '.svg'; ?>" alt="<?= $category['title']; ?>">
                             </div>
                             <div class="category-text p-5 text-center">
-                                <h3><?= htmlspecialchars($category['title']); ?></h3>
+                                <h3 class="category-name"><?= htmlspecialchars($category['title']); ?></h3>
                             </div>
                         </a>
                     </div>

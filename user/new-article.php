@@ -35,9 +35,9 @@ require_once(__DIR__ . '/../includes/header.php');
 ?>
 
 <?php if (Auth::isLoggedIn()) : ?>
-    <div class="container mb-5 mt-5 main-content">
+    <div class="container my-5 py-4 main-content">
         <?php if ($has_profile) : ?>
-            <h2 class="my-3">New Article</h2>
+            <h1 class="mb-5">New Article</h1>
             <?php require_once(__DIR__ . '/../includes/article-form.php'); ?>
         <?php else : ?>
             <h2>You need to have a profile to create an article</h2>

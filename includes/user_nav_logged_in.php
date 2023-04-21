@@ -1,11 +1,12 @@
 <div class="header-wrapper header-wrapper__logged-in d-flex align-items-baseline justify-content-between">
     <div class="nav-logo">
-        <a class="logo-tx d-flex" href="/"> <img class="logo" src="/media/site-images/logo.svg" alt="">Web Security</a>
+        <a class="logo-tx d-flex align-items-baseline" href="/"> <img class="logo" src="/media/site-images/logo.svg" alt="">Web Security</a>
     </div>
     <nav>
-        <ul class="nav-labels">
-            <li><a class="d-none d-lg-block <?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
-            <li><a class="d-none d-lg-block <?= $_yourArticles ?? ' ' ?>" href="/user/articles-overview.php">Your articles</a></li>
+        <ul class="nav-labels d-flex">
+            <li><a class="d-none d-xl-block <?= $_risks ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Security Risks</a></li>
+            <li><a class="d-none d-xl-block <?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
+            <li class="d-none d-xl-block"><a class="tertiary-btn" href="/user/logout.php">Log out</a></li>
         </ul>
     </nav>
     <div class="menu-icon d-flex justify-content-end">
@@ -26,7 +27,8 @@
             <!-- <div><?= $_SESSION['username'] ?></div> -->
             <ul class="d-flex flex-column align-items-end nav-labels burger-menu-labels">
                 <li><a class="<?= $_homePage ?? ' ' ?>" href="/">Home</a></li>
-                <li class=""><a class="<?= $_blog ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Blog</a></li>
+                <li><a class="<?= $_risks ?? ' ' ?>" href="/articles-overview.php?category=privilege_escalation">Security Risks</a></li>
+                <li class=""><a class="<?= $_blog ?? ' ' ?>" href="/blog.php">Blog</a></li>
                 <li class=""><a class="<?= $_yourArticles ?? ' ' ?>" href="/user/articles-overview.php">Your articles</a></li>
                 <li><a class="<?= $_newArticle ?? ' ' ?>" href="/user/new-article.php">Create new article</a></li>
                 <?php if ($_SESSION['has_profile']) : ?>
